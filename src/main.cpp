@@ -3,7 +3,7 @@
 #include "./../include/Game.h"
 
 int main() {
-    BOARD board;
+    BOARD* board = new BOARD();
     GAME game(board);
     game.run();
     return 0;

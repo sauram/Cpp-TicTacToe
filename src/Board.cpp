@@ -1,4 +1,4 @@
-#include "../include/Board.h"
+#include "Board.h"
 #include <iostream>
 
 
@@ -12,26 +12,26 @@ void BOARD::init() {
 }
 
 void BOARD::draw() {
-    std::cout<<"-  -  -  -  -\n";
+    std::cout<<"-  -  -  -  - \n";
     for (int i = 0; i < BOARD_SIZE; i++) {
         for (int j = 0; j < BOARD_SIZE; j++) {
             std::cout << "| " << board[i][j] << " ";
         }
         std::cout<< "| " << std::endl;
-        std::cout<<"-  -  -  -  -\n";
+        std::cout<<"-  -  -  -  - \n";
     }
 }
 
 bool BOARD::checkWin(){
     // check lines
     for (int i = 0; i < BOARD_SIZE; i++) {
-        if (board[i][0] == board[i][1] == board[i][2]) {
+        if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
             return true;
         }
     }
     // check columns
     for (int i = 0; i < BOARD_SIZE; i++) {
-        if (board[0][i] == board[1][i] == board[2][i]) {
+        if (board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
             return true;
         }
     }

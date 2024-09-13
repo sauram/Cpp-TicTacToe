@@ -4,12 +4,12 @@
 #include "Board.h"
 class GAME{
     public:
-        GAME(const BOARD& board);
+        GAME(BOARD* board);
         ~GAME() = default;
 
         void run();
 
     private:
-        BOARD m_board;
+        BOARD* m_board;
 };
 #endif // _GAME_H
